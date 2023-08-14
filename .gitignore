@@ -1,0 +1,5 @@
+#libreria del entorno actual
+__pycache__/
+#Carpetas de entornos virtuales
+.venv/
+.DS_Store

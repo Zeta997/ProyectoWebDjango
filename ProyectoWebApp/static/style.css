@@ -1,0 +1,12 @@
+header ul.menuDespliegue {
+    display:flex; 
+    list-style: none; 
+}
+
+header ul.menuDespliegue a {
+    text-decoration: none;
+}
+
+header ul.menuDespliegue a li {
+    margin-left: 30px;
+}
