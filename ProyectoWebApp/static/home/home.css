@@ -1,0 +1,48 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor {
+    background-image: url("/static/img/bg_homeDelivery.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.contenedor-elementos {
+    width: 60%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    transform: translate(35%, 20%);
+    background-color: rgba(103, 185, 140, 0.816);
+    
+}
+
+.contenedor-elementos p {
+    color: rgb(239, 239, 239);
+    font-size: 4vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contenedor-parrafo {
+    width: 60%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    transform: translate(35%, 90%);
+    background-color: rgba(103, 185, 140, 0.816);
+}
+
+.contenedor-parrafo p {
+    padding: 2%;
+    text-align: center;
+    color: rgb(239, 239, 239);
+    font-size: 2vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

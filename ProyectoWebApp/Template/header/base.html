@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styleHeader/style.css' %}">
+    <link rel="stylesheet" href="{% static 'home/home.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+</head>
+<body>
+    <header >           
+        <nav class="nav-container">
+            <ul>
+                <li ><a href="{%url 'home'%}" class="nav">Home</li></a>
+                <li ><a href="{%url 'servicio'%}" class="nav">Servicio</li></a>
+                <li ><a href="{%url 'tienda'%}" class="nav">Tienda</li></a>
+                <li ><a href="{%url 'blog'%}" class="nav">Blog</li></a>
+                <li ><a href="{%url 'contacto'%}" class="nav">Contacto</li></a>
+            </ul>
+        </nav>        
+    </header>
+    {%block content%}
+        <!-- El contenido va aqui -->
+    {%endblock%}
+    <footer>
+        <div class="container">
+            <ul>
+                <li><a href="#" class="nav-link">Politica de privacidad</a></li>
+                <li><a href="#" class="nav-link">Aviso legal</a></li>
+                <li><a href="#" class="nav-link">Cookies</a></li>
+                <p>© Gestion de pedidos 2023</p>           
+            </ul>
+             
+        </div>     
+    </footer>
+</body>
+</html>

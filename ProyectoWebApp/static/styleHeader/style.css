@@ -1,0 +1,65 @@
+header {
+    position: sticky;
+}
+.nav-container {
+    height: 30%;
+    width: auto;
+    background-color: rgb(53, 107, 164);
+    display: flex;
+    position: sticky;
+    flex-wrap: wrap;
+    min-width: 250px;
+    justify-content: center;
+    align-items: center; 
+}
+
+.nav-container ul{
+    list-style-type: none;  
+}
+.nav-container li {     
+    list-style: none;
+    float: left;
+    width: 7em;
+    margin-left: 20px;
+}
+li a.nav{
+    flex: 1;
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(223, 219, 219);
+}
+
+li a.nav:hover{
+    color: rgb(176, 170, 170);
+}
+
+.container {   
+    height: 40%;
+    width: auto;
+    background: rgb(6, 6, 145);
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.container ul {
+    list-style-type: none;   
+}
+.container li{ 
+    padding-top: 1em;
+}
+a.nav-link {
+    text-decoration: none;
+    color: rgba(251, 251, 251, 0.687);
+}
+a.nav-link:hover{
+    color: rgb(251, 251, 251);
+}
+
+p {
+    position: relative;
+    display: block;
+    justify-content: center;
+    color: white;
+}
