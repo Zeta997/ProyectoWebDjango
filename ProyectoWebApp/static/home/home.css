@@ -4,7 +4,7 @@ body {
 }
 
 .contenedor {
-    background-image: url("/static/img/bg_homeDelivery.jpg");
+    background-image: url('/static/img/bg_homeDelivery.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

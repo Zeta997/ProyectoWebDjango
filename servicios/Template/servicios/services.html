@@ -1,14 +1,19 @@
 {%extends 'header/base.html'%}
 {%load static%}
-
 {%block content%}
-<div>
-    {% for contenido in servicio%}
-    <ul>
-        <li><h2>{{contenido.titulo}}</h2></li>
-        <li>{{contenido.contenido}}</li>
-        <p style="color: black;"><img src="{{contenido.imagen.url}}" alt="imagen de prueba" width="100px" height="100px"></p>
-    </ul>
+<link rel="stylesheet" href="{% static 'servicesStyle.css'%}">
+
+<section class="contenedor">
+    {% for contenido in servicio%}  
+    <div class="contenido">
+        <ul>
+            <li><h2>{{contenido.titulo}}</h2></li>
+            <li><p>{{contenido.contenido}}</p></li>
+            <li><p style="color: black;"><img src="{{contenido.imagen.url}}" alt="imagen de prueba" width="200px" height="100px"></p></li>
+        </ul>
+    </div> 
     {%endfor%}
-</div>
+    
+</section>
+
 {%endblock%}

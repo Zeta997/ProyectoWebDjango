@@ -38,7 +38,6 @@ li a.nav:hover{
     width: auto;
     background: rgb(6, 6, 145);
     position: relative;
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
