@@ -1,0 +1,14 @@
+{%extends 'header/base.html'%}
+{%load static%}
+
+{%block content%}
+<div>
+    {% for contenido in servicio%}
+    <ul>
+        <li><h2>{{contenido.titulo}}</h2></li>
+        <li>{{contenido.contenido}}</li>
+        <p style="color: black;"><img src="{{contenido.imagen.url}}" alt="imagen de prueba" width="100px" height="100px"></p>
+    </ul>
+    {%endfor%}
+</div>
+{%endblock%}
