@@ -34,19 +34,19 @@ li a.nav:hover{
 }
 
 .container {   
-    height: 40%;
+    height: 150px;
     width: auto;
-    background: rgb(6, 6, 145);
-    position: relative;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    background: rgb(6, 6, 145);   
 }
 .container ul {
-    list-style-type: none;   
+    margin: 0;
+    padding:0;
 }
 .container li{ 
     padding-top: 1em;
+    text-align: center;
+    list-style-type:none;
+    width:auto;
 }
 a.nav-link {
     text-decoration: none;
@@ -54,11 +54,4 @@ a.nav-link {
 }
 a.nav-link:hover{
     color: rgb(251, 251, 251);
-}
-
-p {
-    position: relative;
-    display: block;
-    justify-content: center;
-    color: white;
 }

@@ -1,0 +1,18 @@
+.contenedor {
+    width: auto;
+    padding: 2%;
+    height: 100vh;
+    background: rgb(66, 178, 135);
+}
+
+.content-list {
+    margin: 2%;
+    background: rgba(218, 228, 231, 0.912);
+    width: auto;
+    padding: 2%;
+    text-align: center;
+}
+
+.content-list ul {
+    list-style-type: none;
+}

@@ -1,0 +1,24 @@
+{%extends 'header/base.html'%}
+{%load static %}
+
+
+{%block content%}
+<link rel="stylesheet" href="{%static 'styleBlog.css'%}">
+
+<section class="contenedor">
+    {% for post in posts%}  
+    <div class="content-list">
+        <ul>
+            {%if post.imagen%}
+                <li><p style="color: black;"><img src="{{post.imagen.url}}" alt="" width="400px" height="200px"></p></li>
+            {%endif%}           
+            <li><h2>{{post.titulo}}</h2></li>
+            <li><p>{{post.contenido}}</p></li>
+            <li><p>Categoria: {%for categoria in post.categoria.all%}{{categoria}}{%endfor%}/ Autor: {{post.autor}}</p></li>           
+        </ul>
+    </div> 
+    {%endfor%}
+    
+</section>
+
+{%endblock%}

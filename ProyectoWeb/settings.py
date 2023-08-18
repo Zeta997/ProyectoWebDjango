@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ProyectoWebApp',
     'servicios',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,10 @@ ROOT_URLCONF = 'ProyectoWeb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/Users/macbookair/Desktop/Proyectos/Proyecto1/ProyectoWebApp/Template', '/Users/macbookair/Desktop/Proyectos/Proyecto1/servicios/Template'],
+        'DIRS': ['/Users/macbookair/Desktop/Proyectos/Proyecto1/ProyectoWebApp/Template', 
+        '/Users/macbookair/Desktop/Proyectos/Proyecto1/servicios/Template',
+        '/Users/macbookair/Desktop/Proyectos/Proyecto1/blog/Template'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,6 +127,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     "ProyectoWebApp/static/",
     "servicios/static/",
+    "blog/static/",
 ] 
 
 MEDIA_URL = '/media/'
