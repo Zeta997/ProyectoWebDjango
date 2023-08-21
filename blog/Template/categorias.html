@@ -19,14 +19,7 @@
     </div> 
     {%endfor%}
     <div style="width: auto; margin: auto;">
-        Categoria:
-         
-            {% for postea in category %}
-                
-                <a href="{%url 'categoria' postea.id %}">{{postea}}</a>
-                
-            {%endfor%}
-        
+        Categoria: &nbsp;<p style="margin: 0; display: inline;">{{categoria.nombre}}</p>
     </div>
     
 </section>

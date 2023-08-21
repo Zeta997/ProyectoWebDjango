@@ -5,7 +5,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', views.Home, name="home"),
     path('tienda/', views.Tienda,name="tienda"),
-    path('contacto/', views.Contacto, name="contacto"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
