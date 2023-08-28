@@ -4,6 +4,7 @@ body{
 }
 .contenedor {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     background: rgb(66, 178, 135);
 }

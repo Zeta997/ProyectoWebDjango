@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'servicios',
     'blog',
     'contacto',
+    'tienda',
+    'carro',
 ]
 
 MIDDLEWARE = [
@@ -62,6 +64,7 @@ TEMPLATES = [
         '/Users/macbookair/Desktop/Proyectos/Proyecto1/servicios/Template',
         '/Users/macbookair/Desktop/Proyectos/Proyecto1/blog/Template',
         '/Users/macbookair/Desktop/Proyectos/Proyecto1/contacto/Template',
+        '/Users/macbookair/Desktop/Proyectos/Proyecto1/tienda/Template',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -125,12 +128,24 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+EMAIL_BACKEND= 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST='smtp.gmail.com'
+
+EMAIL_USE_TLS=True
+
+EMAIL_PORT=587
+
+EMAIL_HOST_USER= 'companytestingservices@gmail.com'
+
+EMAIL_HOST_PASSWORD='efaonabjdsmqklim'
 
 STATICFILES_DIRS = [
     "ProyectoWebApp/static/",
     "servicios/static/",
     "blog/static/",
     "contacto/static",
+    "tienda/static",
 ] 
 
 MEDIA_URL = '/media/'

@@ -11,14 +11,17 @@ body {
 form {
     display: block;
     width: 100%;
+    height: auto;
     text-align: center;
 }
 
 textarea {
     width: 80%;
     max-width: 80%;
+    min-width: 80%;
     height: 150px;
-    max-height: 400px;
+    max-height: 150px;
+    
 }
 
 h2 {

@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    background-color: rgb(43, 150, 43);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;   
+    margin: auto;
+}
+
+.elemento {   
+    margin: 2% ;
+    background-color: aqua;
+    width: auto;
+    text-align: center;
+}
+
+.elemento ul.items {
+     padding: 0;
+     margin: 0;
+    list-style-type: none;
+}
+
+ul.items li{
+    padding: 0;
+} 
+
+.button {
+    margin: 4px 2px;
+    padding: 15px 32px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+}
+.button:hover{
+    background-color: rgb(2, 102, 2);
+}
+
+
+@media only screen and (max-width:520px){
+    img {
+        max-width: 100%;
+    }
+}

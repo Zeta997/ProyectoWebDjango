@@ -3,7 +3,9 @@
 {%block content%}
 <link rel="stylesheet" href="{%static 'styleContacto.css'%}">
     <section class="contenedor">
-            <form action="contacto/" method="POST">
+        {%if form.erros %} <p>Por favor rellene los campos y/o introduzca un email valido. {%endif%}</p>
+            <form action="" method="POST">
+                {% csrf_token %}
                 <label for="title"> <h2> Asunto</h2></label><br>
                     <input type="text" name="titulo" id="titulo" style="width:40%; height:30px;"><br>
                 <label for="correo"><h2> Email</h2></label><br>

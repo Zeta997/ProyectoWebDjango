@@ -1,0 +1,57 @@
+{%extends 'header/base.html'%}
+{%load static%}
+
+{%block content %} 
+<style>
+    section {
+        background: rgb(85, 200, 116);
+        width: auto;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        
+    }
+    form{
+        text-align: center;
+    }
+    table{
+        margin: auto;
+    }
+    input#id_titulo, #id_email, #id_nombre {
+        width: 50%;
+        height: 30px;
+    }
+    input.boton{
+        width: 15%;
+        height: 40px;
+        background-color: blue;
+        border-radius: 10px;
+        color: white;
+        border: none;
+        text-decoration: none;
+    }
+    input.boton:hover {
+        background-color: rgb(6, 6, 208);
+    }
+</style>
+<section>
+    <form action="" method="post">
+        {%csrf_token%}
+        <table>
+            {{contactForm}}
+            
+        </table>
+        {% if 'valido' in request.GET%}
+            <p>Enviado satisfactoriamente. Nos pondremos en contacto contigo lo antes posible.</p>
+        {%else%}
+            <input class="boton" type="submit" value="Enviar">
+        {%endif%}
+    </form>
+</section>
+{%endblock%}

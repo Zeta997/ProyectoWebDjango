@@ -1,0 +1,27 @@
+{%extends 'header/base.html'%}
+{%load static%}
+
+{%block content%}
+<link rel="stylesheet" href="{% static 'styleTienda.css'%}">
+
+<section class="contenedor">
+    {%for id in producto%}
+    <div class="elemento">
+        <ul class="items">
+            <li><img src="{{id.imagen.url}}" alt="Imagen del producto" width="400px" height="200px"></li>
+            <li><p>{{id.nombre}}</p></li>
+            <li><p> Tipo de producto: {{id.categoria.nombre}}</p></li>
+            <li><p>{{id.precio}}</p></li>
+            <li>
+                {%if id.disponibilidad %} 
+                <p style="color: green;">Hay stock</p> 
+                <a href="#" class="button">Añadir al carrito</a>
+                {%else%} 
+                <p style="color: red;">No hay stock</p> 
+                {%endif%}
+            </li>
+        </ul>
+    </div>
+    {%endfor%}
+</section>
+{%endblock%}
