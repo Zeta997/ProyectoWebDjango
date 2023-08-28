@@ -136,9 +136,9 @@ EMAIL_USE_TLS=True
 
 EMAIL_PORT=587
 
-EMAIL_HOST_USER= 'companytestingservices@gmail.com'
+EMAIL_HOST_USER= '################'
 
-EMAIL_HOST_PASSWORD='efaonabjdsmqklim'
+EMAIL_HOST_PASSWORD='############'
 
 STATICFILES_DIRS = [
     "ProyectoWebApp/static/",
