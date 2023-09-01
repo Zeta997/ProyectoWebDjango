@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from django.contrib.messages import constants as  mensajes_error
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'contacto',
     'tienda',
     'carro',
+    'authentication',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +67,8 @@ TEMPLATES = [
         '/Users/macbookair/Desktop/Proyectos/Proyecto1/blog/Template',
         '/Users/macbookair/Desktop/Proyectos/Proyecto1/contacto/Template',
         '/Users/macbookair/Desktop/Proyectos/Proyecto1/tienda/Template',
+        '/Users/macbookair/Desktop/Proyectos/Proyecto1/carro/Template',
+        '/Users/macbookair/Desktop/Proyectos/Proyecto1/authentication/Template',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -73,6 +77,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'carro.context_processors.importeTotalCarro'
             ],
         },
     },
@@ -140,6 +145,13 @@ EMAIL_HOST_USER= 'companytestingservices@gmail.com'
 
 EMAIL_HOST_PASSWORD='efaonabjdsmqklim'
 
+MESSAGES_TAGS = {
+    mensajes_error.DEBUG: 'debug',
+    mensajes_error.INFO: 'info',
+    mensajes_error.SUCCESS: 'success',
+    mensajes_error.WARNING: 'warning',
+    mensajes_error.ERROR: 'danger',
+}
 STATICFILES_DIRS = [
     "ProyectoWebApp/static/",
     "servicios/static/",

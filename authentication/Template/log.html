@@ -1,0 +1,17 @@
+{%extends 'header/base.html'%}
+{%load static%}
+
+{%block content %} 
+<div style="background-color: green; margin: auto; align-items: center;">
+<section style="margin: auto; align-items: center;">
+    {%if messages%} {%for msg in messages%} {{msg}} {%endfor%} {%endif%}
+    <form action="" method="post">
+        {%csrf_token%}
+        <table>
+            {{form}}        
+        </table>
+        <input type="submit" value="Entrar">
+    </form>
+</section>
+</div>
+{%endblock%}

@@ -16,8 +16,19 @@
                 <li ><a href="{%url 'tienda'%}" class="nav">Tienda</li></a>
                 <li ><a href="{%url 'blog'%}" class="nav">Blog</li></a>
                 <li ><a href="{%url 'contacto'%}" class="nav">Contacto</li></a>
+                {%if user.is_authenticated %}
+
+                    <p>Bienvenido, {{user.username}}! </p>
+                    <li><a href="{%url 'logout'%}" class="nav-user"> Log out</a></li>
+                {%else%}
+                    <div style="display: block; float: right;">
+                        <li><a href="{%url 'Authentication'%}" class="nav-user">Registrarse</a></li>
+                        <li><a href="{%url 'login'%}" class="nav-user">Log in</a></li>
+                    </div>
+                {%endif%}
             </ul>
-        </nav>        
+        </nav> 
+     
     </header>
     {%block content%}
         <!-- El contenido va aqui -->

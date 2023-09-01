@@ -1,0 +1,17 @@
+{%extends 'header/base.html'%}
+{%load static%}
+
+{%block content %} 
+<div style="background-color: green; margin: auto; align-items: center;">
+<section style="margin: auto; align-items: center;">
+    {%if form.error%} {{messagess}} {%endif%}
+    <form action="" method="post">
+        {%csrf_token%}
+        <table>
+            {{form}}        
+        </table>
+        <input type="submit" value="Registrase">
+    </form>
+</section>
+</div>
+{%endblock%}

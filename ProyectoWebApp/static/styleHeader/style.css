@@ -28,6 +28,22 @@ li a.nav{
     font-size: 25px;
     color: rgb(223, 219, 219);
 }
+li a.nav-user {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  margin: 1%;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+li a.nav-user:hover{
+    background-color: #ffffff; /* Green */
+  color: #4CAF50;
+}
 
 li a.nav:hover{
     color: rgb(176, 170, 170);

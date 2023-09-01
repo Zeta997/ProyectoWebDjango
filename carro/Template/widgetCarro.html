@@ -1,0 +1,45 @@
+
+<style>
+    table, th, tr, td {
+      border: 1px solid white;
+      border-collapse: collapse;
+    }
+</style>
+<table style="color:white; width: 100%;">
+    <thead>
+        <tr>
+            <th colspan="3">
+                Carro compra
+            </th>
+        </tr>
+        <tr>
+            <th>Articulo</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+
+
+<tbody style="color:white; width: 100%;">
+    {% if request.session.carro.items %}
+        {%for key, value in request.session.carro.items%}
+            <tr >
+                <td>{{value.nombre}}</td>
+                <td>{{value.cantidad}}
+                    <a href="{%url 'agregar' value.producto_id%}" style="background-color: orange; border-radius: 1px; text-decoration: none; width: 15px; display: inline-block; ">+</a>
+                    <a href="{%url 'restar' value.producto_id%}" style="background-color: orange; border-radius: 1px; text-decoration: none; width: 15px; display: inline-block;">-</a></td>
+                <td>{{value.precio}}</td>
+            </tr>
+        {%endfor%}
+    {%else%}
+        <tr>
+            <td colspan="3">
+                <div style=" margin: auto; background-color: rgb(198, 106, 106);">
+                    Sin productos
+                </div>
+                
+            </td>
+        </tr>
+    {%endif%}
+</tbody>
+</table>

@@ -2,47 +2,92 @@ body {
     margin: 0;
     padding: 0;
 }
-
 .contenedor {
-    background-color: rgb(43, 150, 43);
+    height: 100%;
+    width: auto;
+    background: rgba(106, 198, 189, 0.811);
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;   
-    margin: auto;
 }
 
-.elemento {   
-    margin: 2% ;
-    background-color: aqua;
-    width: auto;
+.contenido {
+    height: 30%;
+    margin: 2%;
+    border-radius: 3px;
+    min-width: 45%;
+    min-height: 40%;
+    background-color: rgba(41, 216, 138, 0.811);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido ul {
+    padding: 0;
+}
+.contenido ul li {
+    text-align: center;
+    list-style: none;
+}
+
+.contenido  h2{
+    text-transform: uppercase;
+    font-size: larger;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+
+.contenido  p { 
+    align-content: center;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+ a.button {
+    border: none;
+    background-color: green;
+    color: white;
+    padding: 15px 32px;
+    height: 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+a.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+div.widgetMarket {
+    position: absolute;
+    float: right;
+    width: 20%;
+    height: auto;
+    background-color: blue;
+    padding: 1%;
     text-align: center;
 }
 
-.elemento ul.items {
-     padding: 0;
-     margin: 0;
-    list-style-type: none;
-}
-
-ul.items li{
-    padding: 0;
-} 
-
-.button {
-    margin: 4px 2px;
-    padding: 15px 32px;
-    background-color: green;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    text-decoration: none;
-}
-.button:hover{
-    background-color: rgb(2, 102, 2);
-}
-
-
-@media only screen and (max-width:520px){
+@media only screen and (max-width: 900px){
+    .contenido {
+        height: 50%;
+        margin: 2%;
+        padding:2%;
+        border-radius: 3px;
+        width: auto;
+        background-color: rgba(41, 216, 138, 0.811);
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor {
+        height: 100%;
+        width: auto;
+        background: rgba(106, 198, 189, 0.811);
+        
+        display: flow-root;
+    }
     img {
         max-width: 100%;
     }
