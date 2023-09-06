@@ -3,12 +3,17 @@
 
 {%block content%}
 <link rel="stylesheet" href="{% static 'styleTienda.css'%}">
+{%if user.is_authenticated%}
+	    <div class="widgetMarket">
+	        {%include 'widgetCarro.html'%}	        
+	        <p style="color: rgb(39, 39, 39);">Total: {{Importe_total}}</p>
+	        
+	            {%if Importe_total %}
+	                <a href="#" class="button-comprar">Comprar</a>
+	            {%endif%}
+	    </div>
+{%endif%}
 <section class="contenedor">
-    <div class="widgetMarket">
-        {%include 'widgetCarro.html'%}
-        <p style="color: white;">Total: {{Importe_total}}</p>
-        
-    </div>
     {%for id in producto%}
     <div class="contenido">
         <ul style="margin: 0; padding: 0;">

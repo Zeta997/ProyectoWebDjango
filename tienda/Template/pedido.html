@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Hola, {{pedido.userActive}} <br>
+    N de pedido: {{pedido.id}}<br>
+    Email del usuario: {{user.mail}}<br>
+    Linea de pedido: <br>
+    {%for id in lista_pedido%}
+        Producto: <strong> {{id.producto.nombre}}</strong> Cantidad: <strong> {{id.cantidad}}</strong><br>
+         
+    {%endfor%}
+</body>
+</html>
