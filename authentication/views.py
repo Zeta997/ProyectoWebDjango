@@ -16,7 +16,6 @@ class VRegistration(View):
 
         try:
             usuario = form.save() #se almacena los dato del usuario automaticamente en la BBDD
-
             login(request, usuario)
             return redirect('/')
         except Exception as e:

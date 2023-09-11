@@ -35,7 +35,7 @@ def procesar_pedido(request):
 
     messages.success(request, 'Pedido creado correctamente.')
 
-    return redirect('../tienda')
+    return redirect('https://buy.stripe.com/test_eVa7uf9iAf893SMcMM')
 
 
 def enviar_mail(**kwargs):
