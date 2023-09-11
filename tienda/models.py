@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 import stripe
 # Create your models here.
@@ -44,6 +44,20 @@ def CrearArticuloStripe(sender, instance,**kwargs):
         unit_amount= int(instance.precio*100),
         currency = 'eur',
         product = item_product['id']
-    )              
+    )
 
-        
+
+@receiver(post_delete, sender=Producto)
+def EliminarProductoStripe(sender, instance, **kwargs):
+    # listaNombre= dict()
+    # NombreProductos= stripe.Product.list()
+    # for item in NombreProductos:
+    #     listaNombre[item.id]=item.name
+    #     print(listaNombre[item.id])
+    
+    # for key,value in listaNombre.items():
+    #     print(int(value['name']))
+    #     if(instance.nombre==key['name']):
+    #         stripe.Product.delete(value['id'])
+    #         break
+    print('Producto eliminado')
