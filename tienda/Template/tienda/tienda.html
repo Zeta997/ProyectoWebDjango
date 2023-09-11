@@ -17,10 +17,10 @@
     {%for id in producto%}
     <div class="contenido">
         <ul style="margin: 0; padding: 0;">
-            <li><img src="{{id.imagen.url}}" alt="Imagen del producto" width="400px" height="200px"></li>
+            <li><img src="{{id.imagen.url}}" alt="Imagen del producto" width="200px" height="150px"></li>
             <li><p>{{id.nombre}}</p></li>
             <li><p> Tipo de producto: {{id.categoria.nombre}}</p></li>
-            <li><p>{{id.precio}}</p></li>
+            <li><p><strong>{{id.precio}}</strong></p></li>
             <li>
                 {%if id.disponibilidad %} 
                 <p style="color: green;">Hay stock</p> 
