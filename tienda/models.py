@@ -32,17 +32,16 @@ class Producto(models.Model):
        
         return '{} {} {}'.format(self.nombre, self.precio, self.disponibilidad)
 
-stripe.api_key = 'sk_test_51NmvPOL6EpuUZLgWxfSk5KC3FTyjyFZu68kTq8MDBrMbRwDbLjmkYhyLl6Dzm8zusjaJ4gtciKmV8VX3d9EQBCLk00HEKpZqQL'   
 
+stripe.api_key = 'sk_test_51NmvPOL6EpuUZLgWxfSk5KC3FTyjyFZu68kTq8MDBrMbRwDbLjmkYhyLl6Dzm8zusjaJ4gtciKmV8VX3d9EQBCLk00HEKpZqQL'   
+pedidosARealizar= dict()
 @receiver(post_save, sender=Producto)
 def CrearArticuloStripe(sender, instance,**kwargs): 
 
     item_product=stripe.Product.create(
         name=f'{instance.nombre}',
         description = f'{instance.categoria}',
-        active = False,
-
-       
+        active = True,
     )
     item_price=stripe.Price.create(
         unit_amount= int(instance.precio*100),
@@ -51,6 +50,10 @@ def CrearArticuloStripe(sender, instance,**kwargs):
         active = False,
         
     )
+    
+    pedidosARealizar[instance.id]=item_price['id']
+    print(pedidosARealizar)
+    print('Producto creado en Stripe')
 
 # @receiver(post_delete, sender=Producto)
 # def EliminarProductoStripe(sender, instance, **kwargs):

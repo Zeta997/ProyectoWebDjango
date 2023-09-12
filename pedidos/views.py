@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render, redirect
+from pagos.pagos import create_checkput_session
 from pedidos.models import Pedido, LineaPedido
 from carro.carro import Carro
 from django.contrib.auth.decorators import login_required
@@ -24,7 +25,7 @@ def procesar_pedido(request):
             userActive= request.user,
             pedido = pedido
         ))
-    
+        create_checkput_session(key, value['cantidad'])
     enviar_mail(
         pedido= pedido,
         lista_pedido=lista_pedido,
@@ -35,7 +36,7 @@ def procesar_pedido(request):
 
     messages.success(request, 'Pedido creado correctamente.')
 
-    return redirect('https://buy.stripe.com/test_eVa7uf9iAf893SMcMM')
+    return redirect('/')
 
 
 def enviar_mail(**kwargs):

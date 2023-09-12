@@ -9,7 +9,7 @@
 	        <p style="color: rgb(39, 39, 39);">Total: {{Importe_total}}</p>
 	        
 	            {%if Importe_total %}
-	                <a href="#" class="button-comprar">Comprar</a>
+	                <a href="{%url 'procesar_pedido'%}" class="button-comprar">Comprar</a>
 	            {%endif%}
 	    </div>
 {%endif%}
