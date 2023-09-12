@@ -33,7 +33,7 @@ class Producto(models.Model):
         return '{} {} {}'.format(self.nombre, self.precio, self.disponibilidad)
 
 
-stripe.api_key = 'sk_test_51NmvPOL6EpuUZLgWxfSk5KC3FTyjyFZu68kTq8MDBrMbRwDbLjmkYhyLl6Dzm8zusjaJ4gtciKmV8VX3d9EQBCLk00HEKpZqQL'   
+stripe.api_key = '###########'  
 pedidosARealizar= dict()
 @receiver(post_save, sender=Producto)
 def CrearArticuloStripe(sender, instance,**kwargs): 
