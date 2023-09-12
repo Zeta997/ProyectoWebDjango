@@ -33,31 +33,35 @@ class Producto(models.Model):
         return '{} {} {}'.format(self.nombre, self.precio, self.disponibilidad)
 
 stripe.api_key = 'sk_test_51NmvPOL6EpuUZLgWxfSk5KC3FTyjyFZu68kTq8MDBrMbRwDbLjmkYhyLl6Dzm8zusjaJ4gtciKmV8VX3d9EQBCLk00HEKpZqQL'   
-        
+
 @receiver(post_save, sender=Producto)
 def CrearArticuloStripe(sender, instance,**kwargs): 
+
     item_product=stripe.Product.create(
         name=f'{instance.nombre}',
         description = f'{instance.categoria}',
+        active = False,
+
+       
     )
     item_price=stripe.Price.create(
         unit_amount= int(instance.precio*100),
         currency = 'eur',
-        product = item_product['id']
+        product = item_product['id'],
+        active = False,
+        
     )
 
-
-@receiver(post_delete, sender=Producto)
-def EliminarProductoStripe(sender, instance, **kwargs):
-    # listaNombre= dict()
-    # NombreProductos= stripe.Product.list()
-    # for item in NombreProductos:
-    #     listaNombre[item.id]=item.name
-    #     print(listaNombre[item.id])
-    
-    # for key,value in listaNombre.items():
-    #     print(int(value['name']))
-    #     if(instance.nombre==key['name']):
-    #         stripe.Product.delete(value['id'])
-    #         break
-    print('Producto eliminado')
+# @receiver(post_delete, sender=Producto)
+# def EliminarProductoStripe(sender, instance, **kwargs):
+#     listaNombre= dict()
+#     NombreProductos= stripe.Product.list()
+#     for item in NombreProductos:
+#         listaNombre[item.id]=item.name
+          
+#     for valueName in listaNombre.items():
+        
+#         if(instance.nombre in valueName[1]):
+#             # stripe.Product.delete('{}'.format(valueName[0]))
+#             break
+            
